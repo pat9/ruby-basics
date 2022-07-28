@@ -10,6 +10,7 @@ class QuizTest < Minitest::Test
     end
 
     def test_product?
+         puts "\n\n\n"
         cases_product_test = {
             [1, 4, 21] => 84,
             [-4, 2.3e12, 77.23, 982, 0b101] => -3.48863356e+18,
@@ -27,22 +28,45 @@ class QuizTest < Minitest::Test
     end
 
     def test_anagram?
+         puts "\n\n\n"
          cases_anagram_test = {
             ['Tap', 'paT'] => true,
             ['beat', 'table'] => false,
             ['beat', 'abet'] => true,
             ['seat', 'teal'] => false,
             ['god', 'Dog'] => true,
+            ['god', 1] => false,
         } 
         cases_anagram_test.each do |params, result_expected|
             word_1 = params[0]
             word_2 = params[1]
 
             result = @quiz.anagram? word_1, word_2
-            
+
             puts "Input: #{params}, resultado esperado: #{result_expected}, resultado: #{result}"
             assert_equal result_expected, result
         end
+    end
+
+    def test_compare?
+        puts "\n\n\n"
+        cases_compare_test = {
+            ['nice', 'nice'] => true,
+            ['how', 'who'] => false,
+            ['GoOd DaY', 'gOOd dAy'] => true,
+            ['foo', 'food'] => false
+        }
+
+        cases_compare_test.each do |params, result_expected|
+            word_1 = params[0]
+            word_2 = params[1]
+
+            result = @quiz.compare word_1, word_2
+
+            puts "Input: #{params}, resultado esperado: #{result_expected}, resultado: #{result}"
+            assert_equal result_expected, result
+        end
+        
     end
 
 end
