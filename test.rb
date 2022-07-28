@@ -69,4 +69,12 @@ class QuizTest < Minitest::Test
         
     end
 
+    def test_order
+        input = { abc: 'hello', another_key: 123, 4567 => 'third' }
+        result_expected = ["abc", "4567", "another_key"]
+        result = @quiz.order_keys_hash(input)
+        puts "Input: #{input}, resultado esperado: #{result_expected}, resultado: #{result}"
+        assert_equal result_expected, result
+    end
+
 end

@@ -17,5 +17,14 @@ class Quiz
     def compare(word_1, word_2)
         word_1.downcase == word_2.downcase
     end
-    
+
+    def order_keys_hash(object)
+        keys=object.keys.sort do |a, b|
+            a.to_s.length <=> b.to_s.length
+        end 
+        sorted_keys=keys.map do |key|
+            key.to_s
+        end
+    end
+
 end
