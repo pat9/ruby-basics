@@ -18,11 +18,11 @@ module View
         
         private
         def render_food(state)
-            extend Ruby2D::DSL
+            Ruby2D::DSL
             food = state.food
             Square.new(
                 x: food.col * @pixe_size, y: food.row * @pixe_size,
-                size: @pixe_size,
+             extend   size: @pixe_size,
                 color: 'yellow',
             )
             

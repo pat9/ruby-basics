@@ -1,5 +1,10 @@
 module Model
-    
+    module Direction
+        UP = :up,
+        RIGHT = :right
+        DOWN = :down
+        LEFT = :left
+    end
     class Coord
         attr_accessor :row, :col
         def initialize(row, col)
@@ -30,11 +35,13 @@ module Model
     end
 
     class State
-        attr_accessor :snake, :grid, :food
-        def initialize(snake, grid, food)
+        attr_accessor :snake, :grid, :food, :next_direction, :gameover
+        def initialize(snake, grid, food, next_direction)
             @snake = snake
             @grid = grid
             @food = food
+            @next_direction = next_direction
+            @gameover = gameover
         end
     end
 
@@ -45,7 +52,9 @@ module Model
                 Model::Coord.new(0,1)
             ]),
             Model::Grid.new(8,12),
-            Model::Food.new(4,4)
+            Model::Food.new(4,4),
+            Model::Direction::DOWN,
+            false
         )
     end
 
