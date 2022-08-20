@@ -35,12 +35,12 @@ module Model
     end
 
     class State
-        attr_accessor :snake, :grid, :food, :next_direction, :gameover
-        def initialize(snake, grid, food, next_direction)
+        attr_accessor :snake, :grid, :food, :current_direction, :gameover
+        def initialize(snake, grid, food, current_direction, gameover)
             @snake = snake
             @grid = grid
             @food = food
-            @next_direction = next_direction
+            @current_direction = current_direction
             @gameover = gameover
         end
     end
