@@ -39,7 +39,7 @@ class Quiz
 
         def count_divisors(number)
             range = 1..number
-            range.select { |divisor| (number % divisor == 0) &&  (divisor % 2 == 0) }
+            range.select { |divisor| (number % divisor == 0) }
                 .select { |divisor| divisor % 2 == 0 }
                 .size
         end
