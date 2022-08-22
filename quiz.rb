@@ -39,9 +39,9 @@ class Quiz
 
         def count_divisors(number)
             range = 1..number
-            divisors = range.select { |divisor| number % divisor == 0 }
-            valid_divisors = divisors.select { |divisor| divisor % 2 == 0 }
-            valid_divisors.size
+            range.select { |divisor| (number % divisor == 0) &&  (divisor % 2 == 0) }
+                .select { |divisor| divisor % 2 == 0 }
+                .size
         end
 
         def match_parentheses(string)
@@ -49,11 +49,10 @@ class Quiz
             open_parentheses = []
             for char in chars do
                 if char == ")"
-                    if open_parentheses[-1] == "("
-                        open_parentheses.pop
-                    else
-                        return false
-                    end
+                    return false if open_parentheses[-1] != "("
+                    
+                    open_parentheses.pop
+                    
                 else
                     open_parentheses.push(char)
                 end
