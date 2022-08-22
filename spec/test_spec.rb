@@ -35,7 +35,7 @@ RSpec.describe "Quiz Test" do
 
             result = Quiz.anagram? word_1, word_2
 
-            it "Input: #{params}, resultado esperado: #{result_expected}, resultado: #{result}" do
+            it "Input: #{params}, sould be equal: #{result_expected}" do
                 expect(result_expected).to equal(result) 
             end
         end
@@ -65,7 +65,7 @@ RSpec.describe "Quiz Test" do
         input = { abc: 'hello', another_key: 123, 4567 => 'third' }
         result_expected = ["abc", "4567", "another_key"]
         result = Quiz.order_keys_hash(input)
-        it "Input: #{input}, resultado esperado: #{result_expected}, resultado: #{result}" do
+        it "Input: #{input}, should be equal: #{result_expected}" do
             expect(result_expected).to match_array(result)
         end
     end
@@ -78,7 +78,7 @@ RSpec.describe "Quiz Test" do
 
         cases_array_test.each do |array, result_expected|
             result = Quiz.reverse_array array
-            it "Input: #{result_expected}, resultado esperado: #{result_expected}, resultado: #{result}" do
+            it "Input: #{result_expected}, should be equal: #{result_expected}" do
                 expect(result_expected).to match_array(result)
             end
         end
@@ -95,7 +95,7 @@ RSpec.describe "Quiz Test" do
 
         cases_dividers_test.each do |number, result_expected|
             result = Quiz.count_divisors number
-            it "Input: #{number}, resultado esperado: #{result_expected}, resultado: #{result}" do
+            it "Input: #{number}, should be equal: #{result_expected}" do
                 expect(result_expected).to equal(result)
             end
         end
@@ -114,7 +114,7 @@ RSpec.describe "Quiz Test" do
 
         cases_match_parentheses_test.each do |string, result_expected|
             result = Quiz.match_parentheses string
-            it "Input: #{string}, resultado esperado: #{result_expected}, resultado: #{result}" do
+            it "Input: #{string}, should be equal: #{result_expected}" do
                 expect(result_expected).to equal(result)
             end
         end
