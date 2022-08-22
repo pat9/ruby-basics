@@ -2,8 +2,8 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
-
 # gem "rails"
 gem "rspec"
 gem 'shoulda-matchers', '~> 5.0'
+gem 'ruby2d', '~> 0.11.3'
+gem 'minitest', '~> 5'
